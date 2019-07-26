@@ -1,10 +1,11 @@
-﻿using KagEditor.Wpf.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+
+using KagEditor.Wpf.Utils;
 
 namespace KagEditor.Wpf
 {

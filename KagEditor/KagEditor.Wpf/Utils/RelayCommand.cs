@@ -20,7 +20,7 @@ namespace KagEditor.Wpf.Utils
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-            _canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
+            _canExecute = canExecute;
         }
         #endregion
 
