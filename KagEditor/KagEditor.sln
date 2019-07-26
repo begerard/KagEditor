@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29111.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KagEditor.Wpf", "KagEditor.Wpf\KagEditor.Wpf.csproj", "{2C5491BA-93B2-442A-A675-9324FFE9FE5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C5491BA-93B2-442A-A675-9324FFE9FE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5491BA-93B2-442A-A675-9324FFE9FE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5491BA-93B2-442A-A675-9324FFE9FE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5491BA-93B2-442A-A675-9324FFE9FE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {562D19AD-AF38-4535-BAA9-B9E7C044C13C}
+	EndGlobalSection
+EndGlobal

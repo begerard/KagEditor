@@ -1,0 +1,174 @@
+﻿<RibbonWindow x:Class="KagEditor.Wpf.View"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:ctrls="clr-namespace:KagEditor.Wpf.Controls"
+              xmlns:utils="clr-namespace:KagEditor.Wpf.Utils"
+              DataContext="{StaticResource MyViewModel}"
+              Title="KAG Editor"
+              Icon="Images/Rin.ico"
+              Height="600"
+              Width="800">
+
+    <DockPanel>
+        <Ribbon x:Name="myRibbon"
+                DockPanel.Dock="Top">
+            <Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar>
+                    <RibbonButton SmallImageSource="/KagEditor.Wpf;component/Images/Open_16x16.png"
+                                  Command="{Binding OpenCommand}"
+                                  ToolTip="Open a file" />
+                    <RibbonButton SmallImageSource="/KagEditor.Wpf;component/Images/Save_16x16.png"
+                                  Command="{Binding SaveCommand}"
+                                  ToolTip="Save the file" />
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>
+
+            <Ribbon.HelpPaneContent>
+                <RibbonButton SmallImageSource="/KagEditor.Wpf;component/Images/Help_16x16.png"
+                              Command="{Binding HelpCommand}"
+                              ToolTip="Open Help WebPage" />
+            </Ribbon.HelpPaneContent>
+
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu  SmallImageSource="/KagEditor.Wpf;component/Images/Options_16x16.png">
+                    <RibbonApplicationMenuItem Header="Open"
+                                               Command="{Binding OpenCommand}"
+                                               InputGestureText="Ctrl + O"
+                                               KeyTip="O"
+                                               QuickAccessToolBarImageSource="/KagEditor.Wpf;component/Images/Open_16x16.png" />
+                    <RibbonApplicationMenuItem Header="Save"
+                                               Command="{Binding SaveCommand}"
+                                               InputGestureText="Ctrl + S"
+                                               KeyTip="S"
+                                               QuickAccessToolBarImageSource="/KagEditor.Wpf;component/Images/Save_16x16.png" />
+                    <RibbonApplicationMenuItem Header="Close"
+                                               Command="{Binding CloseCommand}"
+                                               InputGestureText="Ctrl + W"
+                                               KeyTip="C"
+                                               QuickAccessToolBarImageSource="/KagEditor.Wpf;component/Images/Close_16x16.png" />
+
+                    <RibbonApplicationMenu.FooterPaneContent>
+                        <DockPanel LastChildFill="False">
+                            <RibbonButton Label="About"
+                                          Command="{Binding AboutCommand}"
+                                          DockPanel.Dock="Right" />
+                        </DockPanel>
+                    </RibbonApplicationMenu.FooterPaneContent>
+
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="Home">
+                <RibbonGroup Header="File">
+                    <RibbonSplitButton Label="Clean from All"
+                                       Command="{Binding CleanFileAllCommand}"
+                                       CanAddToQuickAccessToolBarDirectly="False">
+                        <RibbonMenuItem Header="Clean from Word-Wrap"
+                                        Command="{Binding CleanFileWrapCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                        <RibbonMenuItem Header="Clean from LR"
+                                        Command="{Binding CleanFileLRCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                        <RibbonMenuItem Header="Clean from Voices"
+                                        Command="{Binding CleanFileVoicesCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                        <RibbonMenuItem Header="Clean from Comment"
+                                        Command="{Binding CleanFileCommentCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                    </RibbonSplitButton>
+
+                    <RibbonSplitButton Label="Replace Apostrophe"
+                                       Command="{Binding ReplaceApostropheCommand}"
+                                       CanAddToQuickAccessToolBarDirectly="False">
+                        <RibbonMenuItem Header="Replace Quotation Marks by Guillemets"
+                                        Command="{Binding ReplaceDoubleQuoteCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                    </RibbonSplitButton>
+
+                    <RibbonSplitButton Label="Rescript File"
+                                       Command="{Binding ScriptFileCommand}"
+                                       CanAddToQuickAccessToolBarDirectly="False">
+                        <RibbonMenuItem Header="Add Word-Wrap"
+                                        Command="{Binding AddWordWrapCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                        <RibbonMenuItem Header="Add LR"
+                                        Command="{Binding AddLRCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                        <RibbonMenuItem Header="Add Blank Space"
+                                        Command="{Binding AddBlankSpaceCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                    </RibbonSplitButton>
+                </RibbonGroup>
+
+                <RibbonGroup Header="Directory">
+                    <RibbonSplitButton Label="Clean from All"
+                                       Command="{Binding CleanDirectoryAllCommand}"
+                                       CanAddToQuickAccessToolBarDirectly="False">
+                        <RibbonMenuItem Header="Clean from Voices"
+                                        Command="{Binding CleanDirectoryVoicesCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                        <RibbonMenuItem Header="Clean from LR"
+                                        Command="{Binding CleanDirectoryLRCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                    </RibbonSplitButton>
+
+                    <RibbonSplitButton Label="Retranslate Pages"
+                                       Command="{Binding RetranslateDirectoryCommand}"
+                                       CanAddToQuickAccessToolBarDirectly="False">
+                        <RibbonMenuItem Header="Word-Count"
+                                        Command="{Binding WordCountDirectoryCommand}"
+                                        CanAddToQuickAccessToolBarDirectly="False" />
+                    </RibbonSplitButton>
+
+                    <RibbonButton Label=" Rescript Files"
+                                  Command="{Binding ScriptDirectoryCommand}"
+                                  CanAddToQuickAccessToolBarDirectly="False" />
+                </RibbonGroup>
+
+                <RibbonGroup Header="Encoding">
+                    <RibbonComboBox Label="Open with"
+                                    SelectionBoxWidth="52">
+                        <RibbonGallery SelectedValue="{Binding OpenEncoding, Mode=TwoWay}">
+                            <RibbonGalleryCategory ItemsSource="{Binding OpenEncoding, Mode=OneTime,
+                                Converter={StaticResource EnumValuesConverter}}" />
+                        </RibbonGallery>
+                    </RibbonComboBox>
+
+                    <RibbonComboBox Label="Save with"
+                                    SelectionBoxWidth="57">
+                        <RibbonGallery SelectedValue="{Binding SaveEncoding, Mode=TwoWay}">
+                            <RibbonGalleryCategory ItemsSource="{Binding SaveEncoding, Mode=OneTime,
+                                Converter={StaticResource EnumValuesConverter}}" />
+                        </RibbonGallery>
+                    </RibbonComboBox>
+
+                    <RibbonCheckBox Label="Realta Nua support"
+                                    IsChecked="{Binding IsRealtaNua, Mode=TwoWay}"
+                                    CanAddToQuickAccessToolBarDirectly="False" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+
+        <StatusBar DockPanel.Dock="Bottom"
+                   Background="{Binding Path=Background, ElementName=myRibbon}">
+            <StatusBarItem>
+                <Label Content="Current File:" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="{Binding Path=CurrentFile.NameFile, Mode=OneWay}" />
+            </StatusBarItem>
+        </StatusBar>
+
+        <ctrls:BusyIndicator IsBusy="{Binding Path=IsBusy, Mode=OneWay}"
+                             BusyContent="{Binding Path=Status, Mode=OneWay}">
+            <TextBox Text="{Binding Path=CurrentFile.TextString, Mode=OneWay}"
+                     IsReadOnly="True"
+                     AllowDrop="True"
+                     HorizontalScrollBarVisibility="Auto"
+                     VerticalScrollBarVisibility="Auto"
+                     utils:DragOverBehavior.Command="{Binding DragOverCommand}"
+                     utils:DropBehavior.Command="{Binding DropCommand}" />
+        </ctrls:BusyIndicator>
+
+    </DockPanel>
+</RibbonWindow>
