@@ -1,0 +1,12 @@
+﻿<Application x:Class="KagEditor.WpfCore.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:KagEditor.WpfCore"
+             xmlns:utils="clr-namespace:KagEditor.WpfCore.Utils"
+             StartupUri="View.xaml">
+
+    <Application.Resources>
+        <local:ViewModel x:Key="MyViewModel" />
+        <utils:EnumValuesConverter x:Key="EnumValuesConverter" />
+    </Application.Resources>
+</Application>

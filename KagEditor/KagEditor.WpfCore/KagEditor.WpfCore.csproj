@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <ApplicationIcon />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Close_16x16.png" />
+    <None Remove="Images\Help_16x16.png" />
+    <None Remove="Images\Open_16x16.png" />
+    <None Remove="Images\Options_16x16.png" />
+    <None Remove="Images\Rin.ico" />
+    <None Remove="Images\Save_16x16.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Close_16x16.png" />
+    <Resource Include="Images\Help_16x16.png" />
+    <Resource Include="Images\Open_16x16.png" />
+    <Resource Include="Images\Options_16x16.png" />
+    <Resource Include="Images\Rin.ico" />
+    <Resource Include="Images\Save_16x16.png" />
+  </ItemGroup>
+
+</Project>
