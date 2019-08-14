@@ -14,38 +14,38 @@
                 DockPanel.Dock="Top">
             <Ribbon.QuickAccessToolBar>
                 <RibbonQuickAccessToolBar>
-                    <RibbonButton SmallImageSource="/KagEditor.Wpf;component/Images/Open_16x16.png"
+                    <RibbonButton SmallImageSource="/KagEditor;component/Images/Open_16x16.png"
                                   Command="{Binding OpenCommand}"
                                   ToolTip="Open a file" />
-                    <RibbonButton SmallImageSource="/KagEditor.Wpf;component/Images/Save_16x16.png"
+                    <RibbonButton SmallImageSource="/KagEditor;component/Images/Save_16x16.png"
                                   Command="{Binding SaveCommand}"
                                   ToolTip="Save the file" />
                 </RibbonQuickAccessToolBar>
             </Ribbon.QuickAccessToolBar>
 
             <Ribbon.HelpPaneContent>
-                <RibbonButton SmallImageSource="/KagEditor.Wpf;component/Images/Help_16x16.png"
+                <RibbonButton SmallImageSource="/KagEditor;component/Images/Help_16x16.png"
                               Command="{Binding HelpCommand}"
                               ToolTip="Open Help WebPage" />
             </Ribbon.HelpPaneContent>
 
             <Ribbon.ApplicationMenu>
-                <RibbonApplicationMenu  SmallImageSource="/KagEditor.Wpf;component/Images/Options_16x16.png">
+                <RibbonApplicationMenu  SmallImageSource="/KagEditor;component/Images/Options_16x16.png">
                     <RibbonApplicationMenuItem Header="Open"
                                                Command="{Binding OpenCommand}"
                                                InputGestureText="Ctrl + O"
                                                KeyTip="O"
-                                               QuickAccessToolBarImageSource="/KagEditor.Wpf;component/Images/Open_16x16.png" />
+                                               QuickAccessToolBarImageSource="/KagEditor;component/Images/Open_16x16.png" />
                     <RibbonApplicationMenuItem Header="Save"
                                                Command="{Binding SaveCommand}"
                                                InputGestureText="Ctrl + S"
                                                KeyTip="S"
-                                               QuickAccessToolBarImageSource="/KagEditor.Wpf;component/Images/Save_16x16.png" />
+                                               QuickAccessToolBarImageSource="/KagEditor;component/Images/Save_16x16.png" />
                     <RibbonApplicationMenuItem Header="Close"
                                                Command="{Binding CloseCommand}"
                                                InputGestureText="Ctrl + W"
                                                KeyTip="C"
-                                               QuickAccessToolBarImageSource="/KagEditor.Wpf;component/Images/Close_16x16.png" />
+                                               QuickAccessToolBarImageSource="/KagEditor;component/Images/Close_16x16.png" />
 
                     <RibbonApplicationMenu.FooterPaneContent>
                         <DockPanel LastChildFill="False">

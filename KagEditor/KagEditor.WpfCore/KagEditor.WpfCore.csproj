@@ -9,6 +9,7 @@
     <PublishSingleFile>true</PublishSingleFile>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <ApplicationIcon />
+    <AssemblyName>KagEditor</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
